@@ -50,7 +50,7 @@ const ContactUs = () => {
                 <i className="bi bi-github"></i>
               </a>
             </div>
-            <h5>0mehdikeramati1@gmail.com</h5>
+            <h5>adeyemoakinola2@gmail.com</h5>
           </div>
         </form>
       </div>
