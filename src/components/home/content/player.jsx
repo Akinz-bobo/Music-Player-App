@@ -214,7 +214,7 @@ const Player = () => {
                         &nbsp;
                         <span className='Pduration'>
                             {
-                                calculateDuration(duration)
+                                duration ? calculateDuration(duration) : '0:0'
                             }
                         </span>
 
