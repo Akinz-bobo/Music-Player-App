@@ -8,7 +8,6 @@ import ApiContext from '../../context/ApiContext';
 
 import Swal from 'sweetalert2';
 
-
 const Player = () => {
     const [repeat, setRepeat] = useState(true)
     const [random, setRandom] = useState(false)
@@ -50,12 +49,15 @@ const Player = () => {
                 progressBar.current.max = seconds
             }, 1000)
 
+            // console.log('duration:', audioTag)
+
+            console.log(audioTag.current?.currentTime === audioTag.current.duration)
+            console.log('AU', audioTag.current.currentTime)
             setInterval(() => {
                 if (duration > 0 || duration !== undefined) {
                     clearInterval(interval)
-
-                    if (audioTag.current.currentTime === audioTag.current.duration) {
-
+                    if (audioTag.current?.currentTime === audioTag.current.duration) {
+                        console.log('Audio')
                         if (repeat == true) {
                             repeatOnce()
                             setRepeat(repeat == true ? true : false)
@@ -72,6 +74,11 @@ const Player = () => {
             }, 1100)
         }
     })
+
+
+
+    // console.log(volume)
+
 
     function prev() {
 
@@ -220,11 +227,14 @@ const Player = () => {
                             <div className='rangeBox'>
                                 <input
                                     type='range'
-                                    step="0.01"
+                                    step="0.1"
                                     min='0'
                                     max='1'
                                     value={volume}
-                                    onChange={(e) => setVolume(e.target.value)}
+                                    onChange={(e) => setVolume((prev => {
+                                        prev = e.target.value;
+                                        return prev
+                                    }))}
                                 />
                             </div>
                         </div>

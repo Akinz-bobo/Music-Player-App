@@ -1,4 +1,4 @@
-/* change style range input */
+/* change style pf range input */
 
 input[type="range"] {
   cursor: pointer;
@@ -37,18 +37,23 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
 .container {
   width: 100vw;
 }
-.col:last-child{
+
+.col:last-child {
   margin-bottom: 2rem;
 }
+
 .song_container {
   padding: 0.5rem;
+  /* display: none; */
 }
+
 .box_music {
   background-color: #7897973b;
-  padding: 0.4rem;
+  padding: 0.6rem;
   width: 100%;
   height: 16rem;
   text-align: center;
+  border-radius: 5px;
 }
 
 .overlayBox {
@@ -57,13 +62,17 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   position: relative;
   overflow: hidden;
 }
+
 .song_container .songPic {
   width: 100%;
   height: 11rem;
+  border-radius: 5px;
 }
+
 .song_container .song_text {
   margin-top: 0.3rem;
 }
+
 .overlay {
   opacity: 0;
   width: 100%;
@@ -77,9 +86,11 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   background-color: rgba(25, 148, 197, 0.5);
   cursor: pointer;
 }
+
 .overlay:hover {
   opacity: 1;
 }
+
 .overlay .icon {
   font-size: 4rem;
 }
@@ -92,14 +103,13 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
 }
 
 .player_container {
-  overflow: hidden;
   border-top: 0.1rem solid white;
   background-color: #222222;
   width: 100%;
   height: 4.6rem;
   color: white;
   position: fixed;
-  bottom: 0;
+  bottom: 0rem;
   left: 0;
   display: flex;
   align-items: center;
@@ -131,6 +141,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   align-items: center;
   justify-content: center;
 }
+
 /* styled volume button */
 
 .player_container .volumeMusic {
@@ -140,6 +151,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
 }
 
 .player_container .volumeMusic .rangeBox {
+  z-index: 100;
   position: absolute;
   bottom: 2rem;
   right: -0.5rem;
@@ -152,17 +164,19 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   border-radius: 0.1rem;
   box-shadow: inset 0 0 0.2rem white;
   display: none;
-  z-index: 100;
   animation: RangeBoxToTop 0.15s ease-in-out forwards;
 }
+
 @keyframes RangeBoxToTop {
   from {
     height: 0;
   }
+
   to {
     height: 11rem;
   }
 }
+
 .player_container .volumeMusic .rangeBox::after {
   border-radius: 0.2rem;
   content: "";
@@ -176,31 +190,45 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   background-color: #0e0f24;
   transform: rotate(45deg);
 }
+
 .player_container .volumeMusic .rangeBox input[type="range"] {
   transform: rotate(-90deg);
   -webkit-appearance: none;
   position: absolute;
   bottom: 15.5rem;
   left: -11rem;
-  z-index: 10;
 }
+
 .player_container .volumeMusic:hover .rangeBox {
   display: flex;
+  z-index: 1000;
 }
-.player_container
-  .volumeMusic
-  input[type="range"]::-webkit-slider-runnable-track {
+
+.player_container .volumeMusic input[type="range"]::-webkit-slider-runnable-track {
   bottom: 3rem;
   position: absolute;
   width: 10rem;
   background: #ddd;
   border: none;
   border-radius: 3px;
+  z-index: 1000;
 }
+
+.player_container .volumeMusic input[type="range"]::-moz-range-thumb {
+  bottom: 3rem;
+  position: absolute;
+  width: 10rem;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+  z-index: 1000;
+}
+
 .player_container .volumeMusic button {
   background-color: transparent;
   color: white;
 }
+
 /* styled volume button *******************/
 
 .player_container .containerDetailMusic {
@@ -213,26 +241,32 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   align-items: center;
   gap: 0 1rem;
 }
+
 .player_container .containerDetailMusic .imgMusicPlayed {
   cursor: pointer;
   margin-left: 1rem;
 }
+
 .player_container .containerDetailMusic .imgMusicPlayed img {
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
 }
+
 .player_container .containerDetailMusic .imgMusicPlayed.animationImg {
   animation: rotateImg 10s linear infinite;
 }
+
 @keyframes rotateImg {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .player_container .containerDetailMusic .imgMusicPlayed.fullImg {
   border-radius: 0;
   position: fixed;
@@ -243,6 +277,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   text-align: center;
   background-color: white;
 }
+
 .player_container .containerDetailMusic .imgMusicPlayed.fullImg img {
   border-radius: 0;
   width: 100%;
@@ -255,19 +290,13 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   display: none;
 }
 
-.player_container
-  .containerDetailMusic
-  .imgMusicPlayed.fullImg
-  .showFullDetail_enable
-  img {
+.player_container .containerDetailMusic .imgMusicPlayed.fullImg .showFullDetail_enable img {
   width: 95%;
   height: 80%;
   filter: blur(0);
 }
-.player_container
-  .containerDetailMusic
-  .imgMusicPlayed.fullImg
-  .showFullDetail_enable {
+
+.player_container .containerDetailMusic .imgMusicPlayed.fullImg .showFullDetail_enable {
   width: 20rem;
   height: 20rem;
   color: black;
@@ -284,7 +313,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
 .player_container .containerDetailMusic .closeFullImg {
   z-index: 101;
   position: fixed;
-  top: 2rem; 
+  top: 2rem;
   left: 2rem;
   border-radius: 10%;
   width: 3.5rem;
@@ -311,12 +340,14 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   font-size: 0.9rem;
   color: white;
 }
+
 .player_container .containerDetailMusic .heart {
   color: red;
   cursor: pointer;
   font-size: 1.5rem;
   margin-right: 15rem;
 }
+
 @media screen and (max-width: 1000px) {
   .player_container .containerDetailMusic .heart {
     position: absolute;
@@ -335,13 +366,13 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   input[type="range"] {
     width: 20rem;
   }
-  .player_container
-    .volumeMusic
-    input[type="range"]::-webkit-slider-runnable-track {
+
+  .player_container .volumeMusic input[type="range"]::-webkit-slider-runnable-track {
     bottom: -2rem;
     left: -5rem;
     width: 10rem;
   }
+
   .player_container {
     bottom: 4.2rem;
   }
@@ -358,6 +389,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
     gap: 0.3rem;
     padding-right: 10rem;
   }
+
   .player_container .button_controls button {
     margin: 0 0.4rem;
   }
@@ -365,16 +397,14 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   .player_container .containerDetailMusic .detailMusicPlayed {
     font-size: 0.7rem;
   }
+
   .player_container .containerDetailMusic .imgMusicPlayed {
     width: 2.5rem;
     height: 70%;
     margin-left: -1rem;
   }
 
-  .player_container
-    .containerDetailMusic
-    .imgMusicPlayed.fullImg
-    .showFullDetail_enable {
+  .player_container .containerDetailMusic .imgMusicPlayed.fullImg .showFullDetail_enable {
     top: 12%;
     left: 32%;
   }
@@ -394,22 +424,20 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   input[type="range"] {
     width: 14rem;
   }
-  .player_container
-    .volumeMusic
-    input[type="range"]::-webkit-slider-runnable-track {
+
+  .player_container .volumeMusic input[type="range"]::-webkit-slider-runnable-track {
     bottom: -5rem;
     left: -8rem;
     width: 10rem;
   }
-  .player_container
-    .containerDetailMusic
-    .imgMusicPlayed.fullImg
-    .showFullDetail_enable {
+
+  .player_container .containerDetailMusic .imgMusicPlayed.fullImg .showFullDetail_enable {
     top: 12%;
     left: 28%;
     width: 18rem;
     height: 18rem;
   }
+
   .player_container .containerDetailMusic .heart {
     position: absolute;
     left: 15%;
@@ -421,29 +449,29 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   input[type="range"] {
     width: 10rem;
   }
-  .player_container
-    .volumeMusic
-    input[type="range"]::-webkit-slider-runnable-track {
+
+  .player_container .volumeMusic input[type="range"]::-webkit-slider-runnable-track {
     bottom: -7rem;
     left: -10rem;
     width: 10rem;
   }
+
   .player_container .containerDetailMusic {
     margin-top: 1rem;
   }
+
   .player_container .containerDetailMusic .detailMusicPlayed {
     opacity: 0;
   }
-  .player_container
-    .containerDetailMusic
-    .imgMusicPlayed.fullImg
-    .showFullDetail_enable {
+
+  .player_container .containerDetailMusic .imgMusicPlayed.fullImg .showFullDetail_enable {
     width: 16rem;
     height: 16rem;
     padding: 0.2rem;
     top: 20%;
     left: 17%;
   }
+
   .player_container .containerDetailMusic .heart {
     position: absolute;
     left: 11%;

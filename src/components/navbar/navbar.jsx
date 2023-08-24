@@ -29,10 +29,10 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar ">
-        <ul className="w-100 d-flex align-items-center justify-content-between">
+        <ul className="navigation ">
           <li>
-            <h2 style={{ fontFamily: "central_bold" }} className="mx-3">
-              Logo
+            <h2 style={{ fontFamily: "central_bold", padding: '0', margin: '0' }}>
+              MUSIC
             </h2>
           </li>
           <li className="search_box">
@@ -57,7 +57,6 @@ const Navbar = () => {
                 id="change"
                 type="checkbox"
                 onChange={context.toggleTheme}
-              // checked={context.theme === "dark"}
               />
               <label htmlFor="change"></label>
             </div>

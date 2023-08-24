@@ -7,17 +7,7 @@ import ApiContext from "../../context/ApiContext";
 const MobileMenu = () => {
   const context = useContext(ApiContext);
   const [active, setActive] = useState(1);
-  // useEffect(() => {
-  //   return () => {
-  //     window.addEventListener("resize", () => {
-  //       if (window.innerWidth > 800) {
-  //         window.location.replace("/");
-  //       } else if (window.innerWidth < 800) {
-  //         window.location.replace('/content')
-  //       }
-  //     });
-  //   };
-  // });
+
   return (
     <>
       <nav id="mobileMenu">

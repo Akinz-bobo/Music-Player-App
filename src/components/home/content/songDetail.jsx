@@ -2,22 +2,28 @@ import "./content.css";
 import { FcMusic } from "react-icons/fc";
 import ApiContext from "../../context/ApiContext";
 import { Fragment, useContext } from "react";
+import { BsEmojiSmileFill } from 'react-icons/bs';
 
 const SongDetail = () => {
   const context = useContext(ApiContext)
 
+  // console.log(context.songs)
+  const filtered = context.songs.filter((val) => {
+    if (context.searchValue === "") {
+      return val
+    } else if (val.song_name.toLowerCase().includes(context.searchValue.toLowerCase())) {
+      return val
+    } else if (val.singer.toLowerCase().includes(context.searchValue.toLowerCase())) {
+      return val
+    }
+  })
+
+  console.log(filtered)
+  if (filtered.length < 1) return <h3 style={{ width: '90%', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: '8px' }}>No music found! <BsEmojiSmileFill style={{ color: 'red' }} /></h3>
   return (
     <>
       {
-        context.songs.filter((val) => {
-          if (context.searchValue === "") {
-            return val
-          } else if (val.song_name.toLowerCase().includes(context.searchValue.toLowerCase())) {
-            return val
-          } else if (val.singer.toLowerCase().includes(context.searchValue.toLowerCase())) {
-            return val
-          }
-        }).map((s, key) => {
+        filtered.map((s, key) => {
           return (
             <Fragment key={key}>
 

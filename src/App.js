@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate, HashRouter } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Routes, Route, Navigate, HashRouter } from "react-router-dom";
+import { useState } from "react";
 import Home from "./components/home/home";
 import Navbar from "./components/navbar/navbar";
 import MobileMenu from "./components/home/menu/MobileMenu";
@@ -139,22 +139,6 @@ function App() {
       LikeMusic: "false"
     },
   ])
-
-
-  // useEffect(() => {
-
-  //   window.addEventListener("resize", () => {
-  //     if (window.innerWidth < 800) {
-  //       document.querySelector("#mobileMenu").style.display = "block";
-  //       document.querySelector("#desktopMenu").style.display = "none";
-  //       document.querySelector('.player_container').classList.add('mobileMode')
-  //     } else {
-  //       document.querySelector("#desktopMenu").style.display = "block";
-  //       document.querySelector("#mobileMenu").style.display = "none";
-  //       document.querySelector('.player_container').classList.remove('mobileMode')
-  //     }
-  //   });
-  // });
 
   return (
     <>

@@ -26,8 +26,7 @@ const Home = () => {
   return (
     <>
       <div
-        style={{ height: "100vh" }}
-        className="border w-100 d-flex justify-content-between"
+        className="w-100 d-flex justify-content-between content-wrapper"
       >
         <div className="">
           <Menu />

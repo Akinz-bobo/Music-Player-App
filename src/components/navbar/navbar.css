@@ -1,8 +1,19 @@
 .navbar {
   background: #89D7D4;
   color: white;
-  height: 3.5rem;
+  height: 4rem;
   z-index: 4;
+  padding-right: 2rem;
+
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* display: none; */
+  margin: 0 auto;
 }
 
 .search_box {
@@ -19,17 +30,24 @@
   padding: 0 1rem;
   transition: .2s;
 }
-.search_box:hover{
-  width: 16rem;
+
+.search_box:hover {
+  width: 22rem;
 }
+
 @media screen and (max-width: 834px) {
+  .navigation {
+    width: 100%;
+  }
+
   .search_box {
-    width: 30%;
+    width: 50%;
     height: 2.5rem;
     font-size: 1rem;
   }
-  .search_box:hover{
-    width: 35%;
+
+  .search_box:hover {
+    width: 55%;
   }
 }
 
@@ -43,27 +61,39 @@
 .toggleLanguage {
   border: 0.2rem solid lightskyblue;
   margin-right: 1rem;
+  display: none;
 }
+
 /*? toggle Theme */
 .toggleTheme input {
   display: none;
 }
-.toggleTheme input + label {
+
+.toggleTheme input+label {
   cursor: pointer;
   width: 2rem;
   height: 2rem;
   background-image: url("../../assets/picture/moon.svg");
 }
-.toggleTheme input:hover + label {
+
+.toggleTheme input:hover+label {
   transform: rotate(-43deg);
   transition: 0.3s;
 }
-.toggleTheme input:checked + label {
+
+.toggleTheme input:checked+label {
   background-image: url("../../assets/picture/sun.svg") !important;
 }
+
 /*? toggle Theme */
 /* !dark Mode */
 #dark .navbar {
-  background-color: rgb(35, 36, 36);
+  background: #222222;
+  /* color: white */
 }
+
+#dark .search_box {
+  background-color: #aba9a9;
+}
+
 /* !dark Mode */
