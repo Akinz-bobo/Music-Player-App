@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Music-Player-App/static/css/main.fec2d029.css",
-    "main.js": "/Music-Player-App/static/js/main.6c5c7ced.js",
+    "main.css": "/Music-Player-App/static/css/main.83e50159.css",
+    "main.js": "/Music-Player-App/static/js/main.81ad1ca0.js",
     "static/media/YoungboyNeverBrokeAgain.mp3": "/Music-Player-App/static/media/YoungboyNeverBrokeAgain.5ed98af351ba9a66dff0.mp3",
     "static/media/XXXTENTACION.mp3": "/Music-Player-App/static/media/XXXTENTACION.964b1c717f3885a884c0.mp3",
     "static/media/billie_Eilish_noTimeToDie.mp3": "/Music-Player-App/static/media/billie_Eilish_noTimeToDie.decda21dfa3fdfb41a70.mp3",
@@ -35,11 +35,11 @@
     "static/media/noTimeToDie.jfif": "/Music-Player-App/static/media/noTimeToDie.b76d03a55a484e093373.jfif",
     "static/media/sun.svg": "/Music-Player-App/static/media/sun.9b583d42c6fe09590991.svg",
     "index.html": "/Music-Player-App/index.html",
-    "main.fec2d029.css.map": "/Music-Player-App/static/css/main.fec2d029.css.map",
-    "main.6c5c7ced.js.map": "/Music-Player-App/static/js/main.6c5c7ced.js.map"
+    "main.83e50159.css.map": "/Music-Player-App/static/css/main.83e50159.css.map",
+    "main.81ad1ca0.js.map": "/Music-Player-App/static/js/main.81ad1ca0.js.map"
   },
   "entrypoints": [
-    "static/css/main.fec2d029.css",
-    "static/js/main.6c5c7ced.js"
+    "static/css/main.83e50159.css",
+    "static/js/main.81ad1ca0.js"
   ]
 }
